@@ -22,12 +22,13 @@ public class ExpenseTracker {
 	public double getTotal() {
 		double total = 0;
 		for (Expense e : expenses) {
-			total += e.getAmount();
+			if (e != null) {
+				total += e.getAmount();
+			} else {
+				total += 0;
+			}
 		}
-
 		return total;
-		//return 0;
-
 	}
 
 }
